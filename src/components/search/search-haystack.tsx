@@ -47,7 +47,7 @@ export const SearchHaystack: React.FC = () => {
         }   
 
         // setDataResponse(data)
-        axios.post('https://13.213.71.142/searchCvAdvance', formValues)
+        axios.post('http://13.213.71.142/searchCvAdvance', formValues)
             .then((res: any) => {
                 const data = res.data.res
                 const finalResponse = data.map((item: any, index: number) => {
