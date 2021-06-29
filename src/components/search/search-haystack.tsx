@@ -1,85 +1,52 @@
 import React, {useState} from "react";
 import {AgGridReact} from "ag-grid-react";
 import axios from "axios";
-import {Button, Col, Form, Input, InputNumber, Row, Table} from "antd";
+import {Button, Col, Form, Input, InputNumber, Radio, Row, Table} from "antd";
 import {AgAbstractField} from "ag-grid-community";
 
 const columnDefs = [
     {
-        title: 'Birth date',
-        dataIndex: 'birth_date',
-        key: 'birth_date',
-        width: 150,
-    },
-    {
         title: 'File name',
-        dataIndex: 'file_name',
-        key: 'file_name',
+        dataIndex: 'file_url',
+        key: 'file_url',
         width: 150
     },
     {
-        title: 'Gender',
-        dataIndex: 'gender',
-        key: 'gender',
+        title: 'Answer',
+        dataIndex: 'answer',
+        key: 'answer',
         width: 150,
         filtered: true,
     },
     {
-        title: 'Content',
-        dataIndex: 'cv_content',
-        key: 'cv_content',
+        title: 'Context',
+        dataIndex: 'context',
+        key: 'context',
         minWidth: 500,
-        // render: (value: string) => {
-        //     return value.replace(/[^a-zA-Z ]/g, ".")
-        // }
     }
 ]
 export const SearchHaystack: React.FC = () => {
     const [dataResponse, setDataResponse] = useState<any[]>([])
-
     const onFinish = async (values: any) => {
-        console.log("https")
         const formValues = {
-           'gender': values?.user.gender,
-            'major': values?.user.major,
-            'languages': values?.user.languages,
-            'skills': values?.user.skills,
-        }   
-
-        // setDataResponse(data)
-        axios.post('http://13.213.71.142/searchCvAdvance', formValues)
+            'haystackData': values?.user.haystackData,
+        }
+        axios.post('http://13.213.71.142:80/haystack', formValues)
             .then((res: any) => {
-                const data = res.data.res
-                const finalResponse = data.map((item: any, index: number) => {
-                    const subItem = item._source
-                    subItem.key = index
-                    return subItem
-                })
-                console.log(finalResponse)
-                setDataResponse(finalResponse)
+                setDataResponse(res.data.result)
             })
     }
     return <>
         <Row>
             <Col span={12} offset={6} className="fieldset">
                 <h1>Haystack</h1>
-                <Col span={16} offset={4}>
+                <Col span={18} offset={3}>
                     <Form name="nest-messages" onFinish={onFinish}>
-                        <Form.Item name={['user', 'gender']} label="Gender">
-                            <Input/>
-                        </Form.Item>
-
-                        <Form.Item name={['user', 'language']} label="Language">
-                            <Input/>
-                        </Form.Item>
-
-                        <Form.Item name={['user', 'skills']} label="Skills">
-                            <Input/>
-                        </Form.Item>
-
-                        <Form.Item name={['user', 'major']} label="Major">
-                            <Input/>
-                        </Form.Item>
+                        <Row>
+                            <Form.Item name={['user', 'haystackData']} label="Search">
+                                <Input/>
+                            </Form.Item>
+                        </Row>
                         <Form.Item>
                             <Button type="primary" htmlType="submit">
                                 Submit

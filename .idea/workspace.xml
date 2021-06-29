@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="926c6bf1-432c-498b-b751-c3b534195841" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/search/search-elastics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/search-haystack.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search-elastics.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/search-haystack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search-haystack.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pvgas_hseq/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/search" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -35,6 +39,11 @@
     <property name="ts.external.directory.path" value="C:\HuynhTrongDao\react-deploy\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\HuynhTrongDao\react-deploy\src\components\search" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,7 +52,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1624802701550</updated>
-      <workItem from="1624802708434" duration="1864000" />
+      <workItem from="1624802708434" duration="5385000" />
+      <workItem from="1624845756390" duration="28000" />
+      <workItem from="1624885623559" duration="9262000" />
+      <workItem from="1624930866963" duration="208000" />
+      <workItem from="1624965715266" duration="4835000" />
+      <workItem from="1624977858583" duration="1486000" />
     </task>
     <servers />
   </component>
@@ -60,5 +74,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -1,6 +1,6 @@
 
 
-export interface SearchHaystackModel {
+export interface SearchElasticsModel {
     gender: string;
     language: string;
     skills: string;
