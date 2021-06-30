@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="926c6bf1-432c-498b-b751-c3b534195841" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/search/search-elastics.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/search-haystack.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search-elastics.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/search/search-haystack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search-haystack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,7 @@
       <workItem from="1624885623559" duration="9262000" />
       <workItem from="1624930866963" duration="208000" />
       <workItem from="1624965715266" duration="4835000" />
-      <workItem from="1624977858583" duration="1486000" />
+      <workItem from="1624977858583" duration="7054000" />
     </task>
     <servers />
   </component>

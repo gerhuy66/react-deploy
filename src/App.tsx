@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import 'antd/dist/antd.css';
 import './App.css';
 import './styles/styles.scss';
-import {SearchElastics} from "./components/search/search-elastics";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,6 +11,7 @@ import {
     Link
 } from "react-router-dom";
 import {SearchHaystack} from "./components/search/search-haystack";
+import {SearchElastics} from "./components/search/search-elastics";
 
 function App() {
   return (

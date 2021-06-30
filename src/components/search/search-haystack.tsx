@@ -1,15 +1,21 @@
 import React, {useState} from "react";
 import {AgGridReact} from "ag-grid-react";
 import axios from "axios";
-import {Button, Col, Form, Input, InputNumber, Radio, Row, Table} from "antd";
+import {Button, Col, Form, Input, InputNumber, Radio, Row, Table, Tag} from "antd";
 import {AgAbstractField} from "ag-grid-community";
-
+import {
+    DownloadOutlined
+} from '@ant-design/icons';
 const columnDefs = [
     {
         title: 'File name',
         dataIndex: 'file_url',
         key: 'file_url',
-        width: 150
+        width: 150,
+        render: (params: string) => {
+            const link = params.replace("txt","pdf")
+            return <a href={`http://13.213.71.142:80/download/${link}`} target={"_blank"}>{params}</a>
+        }
     },
     {
         title: 'Answer',
@@ -23,15 +29,16 @@ const columnDefs = [
         dataIndex: 'context',
         key: 'context',
         minWidth: 500,
-    }
+    },
 ]
 export const SearchHaystack: React.FC = () => {
     const [dataResponse, setDataResponse] = useState<any[]>([])
     const onFinish = async (values: any) => {
+        console.log("Haystack")
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
-        axios.post('http://13.213.71.142:80/haystack', formValues)
+        axios.post('http://13.213.71.142/haystack', formValues)
             .then((res: any) => {
                 setDataResponse(res.data.result)
             })
@@ -43,9 +50,11 @@ export const SearchHaystack: React.FC = () => {
                 <Col span={18} offset={3}>
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
-                            <Form.Item name={['user', 'haystackData']} label="Search">
-                                <Input/>
-                            </Form.Item>
+                            <Col span={20} offset={2}>
+                                <Form.Item name={['user', 'haystackData']} label="Search">
+                                    <Input/>
+                                </Form.Item>
+                            </Col>
                         </Row>
                         <Form.Item>
                             <Button type="primary" htmlType="submit">
