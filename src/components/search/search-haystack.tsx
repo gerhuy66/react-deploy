@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import {HaystackModel} from "./haystack.model";
 import {HayStackItem} from "../custom/hay-stack-item";
+
 const columnDefs = [
     {
         title: 'File name',
@@ -15,7 +16,7 @@ const columnDefs = [
         key: 'file_url',
         width: 150,
         render: (params: string) => {
-            const link = params.replace("txt","pdf")
+            const link = params.replace("txt", "pdf")
             return <a href={`http://13.213.71.142:80/download/${link}`} target={"_blank"}>{params}</a>
         }
     },
@@ -46,13 +47,6 @@ export const SearchHaystack: React.FC = () => {
                 setDataResponse(res.data.result)
             })
     }
-    console.log(dataResponse)
-    const listHaystackItems = () => {
-        dataResponse.map((items: HaystackModel) => {
-            return <HayStackItem haystack={items}/>
-        })
-    }
-    console.log(listHaystackItems)
     return <>
         <Row>
             <Col span={12} offset={6} className="fieldset">
@@ -75,11 +69,12 @@ export const SearchHaystack: React.FC = () => {
                 </Col>
             </Col>
         </Row>
-        <Row className={"row-table"}>
-            {listHaystackItems}
-            {dataResponse.map((items: HaystackModel) => {
-                return <HayStackItem haystack={items}/>
-            })}
+        <Row>
+            <Col span={18} offset={3}>
+                {dataResponse.map((items: HaystackModel) => {
+                    return <HayStackItem haystack={items}/>
+                })}
+            </Col>
         </Row>
     </>
 }
