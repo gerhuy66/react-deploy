@@ -6,6 +6,8 @@ import {AgAbstractField} from "ag-grid-community";
 import {
     DownloadOutlined
 } from '@ant-design/icons';
+import {HaystackModel} from "./haystack.model";
+import {HayStackItem} from "../custom/hay-stack-item";
 const columnDefs = [
     {
         title: 'File name',
@@ -33,6 +35,7 @@ const columnDefs = [
 ]
 export const SearchHaystack: React.FC = () => {
     const [dataResponse, setDataResponse] = useState<any[]>([])
+
     const onFinish = async (values: any) => {
         console.log("Haystack")
         const formValues = {
@@ -43,6 +46,13 @@ export const SearchHaystack: React.FC = () => {
                 setDataResponse(res.data.result)
             })
     }
+    console.log(dataResponse)
+    const listHaystackItems = () => {
+        dataResponse.map((items: HaystackModel) => {
+            return <HayStackItem haystack={items}/>
+        })
+    }
+    console.log(listHaystackItems)
     return <>
         <Row>
             <Col span={12} offset={6} className="fieldset">
@@ -66,14 +76,10 @@ export const SearchHaystack: React.FC = () => {
             </Col>
         </Row>
         <Row className={"row-table"}>
-            <Col span={20} offset={2}>
-
-                <Table
-                    columns={columnDefs}
-                    dataSource={dataResponse}
-                    // loading={}
-                />
-            </Col>
+            {listHaystackItems}
+            {dataResponse.map((items: HaystackModel) => {
+                return <HayStackItem haystack={items}/>
+            })}
         </Row>
     </>
 }

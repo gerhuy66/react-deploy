@@ -1,7 +1,7 @@
 
-.ant-row{
-  .ant-col{
-    .ant-form-item-label{
+.ant-row {
+  .ant-col {
+    .ant-form-item-label {
       label {
         width: 100px;
         font-weight: bold;
@@ -10,7 +10,8 @@
       }
     }
   }
-  .fieldset{
+
+  .fieldset {
     border: 1px solid black;
     padding: 20px 0 20px 0;
     background-image: url("https://st2.depositphotos.com/1177973/10672/i/950/depositphotos_106722572-stock-photo-beautiful-simple-winter-background.jpg");
@@ -20,11 +21,52 @@
     border-radius: 20%;
   }
 
-  .ant-table-cell{
+  .ant-table-cell {
     text-align: center;
   }
 }
 
-.row-table{
+.row-table {
   margin-top: 20px;
+}
+
+.container-item {
+  background-image: linear-gradient(to bottom right, white, #ccffff);
+  width: 800px;
+  height: fit-content;
+  box-shadow: 0px 0px 1px 1.5px #d9d9d9;
+  border-radius: 10px;
+  padding: 20px;
+
+  .sub-item {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000099;
+    text-align: left;
+
+    .text-answer {
+      font-weight: bold;
+      font-size: 20px;
+      color: black
+    }
+
+    .parent-context {
+      width: 100%;
+      height: 100%;
+      font-weight: bold;
+      font-size: 20px;
+      color: #000099;
+      .text-context{
+        font-weight: 100;
+        font-size: 20px;
+        color: black;
+        .special-text {
+          font-size: 22px;
+          color: red;
+        }
+      }
+    }
+  }
 }
