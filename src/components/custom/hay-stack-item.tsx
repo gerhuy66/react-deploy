@@ -7,18 +7,24 @@ type Props = {
 };
 export const HayStackItem = (props: Props) => {
     const haystack = props.haystack
-    const link = haystack.file_url.replace("txt","pdf")
+    const linkCv = haystack.file_url.replace("txt", "pdf")
+    const linkIm = haystack.file_url.replace("txt", "jpg")
     const context = haystack.context.replace(haystack.answer, `<span class="special-text">${haystack.answer}</span>`)
-    return <div className="container-item">
-        <div className={"sub-item"}>
-            <div style={{}}>Answer: <span className="text-answer">{haystack.answer}</span></div>
-            <div className="parent-context">
-                <div style={{}}>Context:<span className="text-context" dangerouslySetInnerHTML={{ __html: context}}/></div>
+    return (
+        <div className="container-item">
+            <div className="image-item">
+                <img src={`https://cvpreviewimage.s3.ap-southeast-1.amazonaws.com/CV_IMG/${linkIm}`} className="image-cv" alt={"CV"}/>
+                <button id="downloadBtn" className={"button-cv"}>
+                    <a href={`http://13.213.71.142:80/download/${linkCv}`} className={"link-cv"}>Download CV</a>
+                </button>
             </div>
             <div>
-                Link pdf: <a href={`http://13.213.71.142:80/download/${link}`} target="_blank">{link}</a>
+                <div className={"answer-item"}>
+                    Answer: <span className={"answer-sub-item"}>{haystack.answer}</span>
+                </div>
+                <div className={"context-item"}>
+                    Context: <span className={"text-item"}>{context}</span>
+                </div>
             </div>
         </div>
-    </div>
-
-}
+)}

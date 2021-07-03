@@ -31,41 +31,67 @@
 }
 
 .container-item {
-  margin-top: 10px;
+  display: flex;
+  justify-items: flex-start;
   background-image: linear-gradient(to bottom right, white, #ccffff);
-  width: 100%;
+  width: 800px;
   height: fit-content;
   box-shadow: 0px 0px 1px 1.5px #d9d9d9;
   border-radius: 10px;
   padding: 20px;
 
-  .sub-item {
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
-    font-size: 20px;
-    color: #000099;
-    text-align: left;
+  .image-item {
+    width: fit-content;
+    height: fit-content;
 
-    .text-answer {
-      font-weight: bold;
-      font-size: 20px;
-      color: black
+    .image-cv {
+      width: 200px;
+      height: 300px;
     }
 
-    .parent-context {
-      width: 100%;
-      height: 100%;
-      font-weight: bold;
+    .button-cv {
+      margin-left: 24%;
+      width: 50px;
+      height: fit-content;
+      background-color: DodgerBlue;
+      color: white;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+
+      .link-cv {
+        color: white;
+        text-decoration: none;
+      }
+
+    }
+
+    .answer-item {
       font-size: 20px;
       color: #000099;
-      .text-context{
-        font-weight: 100;
+      font-weight: bold;
+
+      .answer-sub-item {
+        font-weight: bold;
         font-size: 20px;
         color: black;
+      }
+    }
+
+    .context-item {
+      font-size: 20px;
+      color: #000099;
+      font-weight: bold;
+      width: 550px;
+
+      .text-item {
+        font-weight: 600;
+        font-size: 20px;
+        color: black;
+
         .special-text {
           font-size: 22px;
-          color: red;
+          color: #000099;
         }
       }
     }
