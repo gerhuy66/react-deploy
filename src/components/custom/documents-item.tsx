@@ -4,18 +4,39 @@ import "react-string-replace"
 import {Button, Col, Row} from "antd";
 
 type Props = {
-    haystack: any
+    haystack: any;
 };
 export const DocumentItem = (props: Props) => {
     const haystack = props.haystack
+    const linkIm = haystack.file_url.replace("txt", "jpg").replace(" (1)", "")
+    const linkCv = haystack.file_url.replace("txt", "pdf").replace(" (1)", "")
+
     return (
         <Row className="container-item">
+            <Col className="image-item" span={5}>
+                <Row>
+                    <Col span={16} offset={4}>x
+                        <img src={`http://54.169.14.103:5000/getImage/${linkIm}`}
+                             className="image-cv" alt={"CV"}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col span={12} offset={8}>
+                        <Button type="primary">
+                            <a href={`http://54.169.14.103:5000/download/${linkCv}`} className="link-cv">Download CV</a>
+                        </Button>
+                    </Col>
+                </Row>
+            </Col>
+
+            <Col span={18} offset={1}>
                 <div className="answer-item">
-                    file_url: <span className="answer-sub-item">{haystack.file_url}</span>
+                    file_url: <span className="answer-sub-item">{linkCv}</span>
                 </div>
                 <div className="context-item">
-                    text: <span className="text-item" >{haystack.text}</span>
+                    text: <span className="text-item">{haystack.text}</span>
                 </div>
+            </Col>
         </Row>
     )
 }

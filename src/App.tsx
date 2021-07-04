@@ -25,7 +25,7 @@ function App() {
     }
     const menu = () => {
         return (
-            <Menu selectedKeys={[stateMenu]} mode="horizontal">
+            <Menu selectedKeys={[stateMenu]} mode="horizontal" className="menu">
                 <Menu.Item key="elastic" icon={<SmileTwoTone/>}>
                     <Link to={'/elastic'}>
                         Feature Search

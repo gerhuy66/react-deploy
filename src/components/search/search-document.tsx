@@ -16,20 +16,20 @@ type Props = {
 export const SearchDocument = (props: Props) => {
     props.setActiveMenu('document')
     const [dataResponse, setDataResponse] = useState<any[]>([])
-
+    const [totalCount, setTotalCount] = useState<number>(0)
     const onFinish = async (values: any) => {
-        console.log("Haystack")
+
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
         axios.post('http://54.169.14.103:5000/searchText', formValues)
             .then((res: any) => {
-                console.log(res)
+                setTotalCount(res.data.result.length)
                 setDataResponse(res.data.result)
             })
     }
     return <>
-        <Row>
+        <Row className="document-search">
             <Col span={12} offset={6} className="fieldset">
                 <h1>Document Search</h1>
                 <Col span={18} offset={3}>
@@ -46,6 +46,8 @@ export const SearchDocument = (props: Props) => {
                                 Submit
                             </Button>
                         </Form.Item>
+                        <h4>Total: {totalCount} documents</h4>
+
                     </Form>
                 </Col>
             </Col>
@@ -53,7 +55,7 @@ export const SearchDocument = (props: Props) => {
         <Row>
             <Col span={18} offset={3}>
                 {dataResponse.map((items: any) => {
-                    return <DocumentItem haystack={items}/>
+                    return <DocumentItem haystack={items} />
                 })}
             </Col>
         </Row>

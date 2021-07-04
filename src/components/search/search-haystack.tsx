@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import {HaystackModel} from "./haystack.model";
 import {HayStackItem} from "../custom/hay-stack-item";
+import ReactLoading from "react-loading";
 
 
 type Props = {
@@ -17,16 +18,18 @@ type Props = {
 export const SearchHaystack = (props: Props) => {
     props.setActiveMenu('haystack')
     const [dataResponse, setDataResponse] = useState<any[]>([])
-
+    const [loading, setLoading] = useState<boolean>(false)
     const onFinish = async (values: any) => {
+        setLoading(true)
         console.log("Haystack")
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
-        axios.post('http://54.169.14.103:5000/haystack', formValues)
+        await axios.post('http://54.169.14.103:5000/haystack', formValues)
             .then((res: any) => {
                 setDataResponse(res.data.result)
             })
+        setLoading(false)
     }
     return <>
         <Row>
@@ -51,8 +54,11 @@ export const SearchHaystack = (props: Props) => {
             </Col>
         </Row>
         <Row>
+            <Col span={2} offset={11}>
+                {loading && <ReactLoading type={'balls'} className="loading" width={'100%'} height={10}/>}
+            </Col>
             <Col span={18} offset={3}>
-                {dataResponse.map((items: HaystackModel) => {
+                {!loading && dataResponse.map((items: HaystackModel) => {
                     return <HayStackItem haystack={items}/>
                 })}
             </Col>
