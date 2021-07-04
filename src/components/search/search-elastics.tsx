@@ -34,7 +34,14 @@ const columnDefs = [
         // }
     }
 ]
-export const SearchElastics: React.FC = () => {
+
+
+type Props = {
+    setActiveMenu: (key: string) => void;
+}
+
+export const SearchElastics = (props: Props) => {
+    props.setActiveMenu('elastic')
     const [dataResponse, setDataResponse] = useState<any[]>([])
 
     const onFinish = async (values: any) => {
@@ -54,7 +61,7 @@ export const SearchElastics: React.FC = () => {
         }
 
         // setDataResponse(data)
-        axios.post('http://13.213.71.142/searchCvAdvance', formValues)
+        axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
             .then((res: any) => {
                 const data = res.data.res
                 const finalResponse = data.map((item: any, index: number) => {

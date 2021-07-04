@@ -8,14 +8,13 @@ import {
 } from '@ant-design/icons';
 import {HaystackModel} from "./haystack.model";
 import {HayStackItem} from "../custom/hay-stack-item";
-
+import {DocumentItem} from "../custom/documents-item";
 
 type Props = {
     setActiveMenu: (key: string) => void;
 }
-
-export const SearchHaystack = (props: Props) => {
-    props.setActiveMenu('haystack')
+export const SearchDocument = (props: Props) => {
+    props.setActiveMenu('document')
     const [dataResponse, setDataResponse] = useState<any[]>([])
 
     const onFinish = async (values: any) => {
@@ -23,15 +22,16 @@ export const SearchHaystack = (props: Props) => {
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
-        axios.post('http://54.169.14.103:5000/haystack', formValues)
+        axios.post('http://54.169.14.103:5000/searchText', formValues)
             .then((res: any) => {
+                console.log(res)
                 setDataResponse(res.data.result)
             })
     }
     return <>
         <Row>
             <Col span={12} offset={6} className="fieldset">
-                <h1>Q/A Search</h1>
+                <h1>Document Search</h1>
                 <Col span={18} offset={3}>
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
@@ -52,8 +52,8 @@ export const SearchHaystack = (props: Props) => {
         </Row>
         <Row>
             <Col span={18} offset={3}>
-                {dataResponse.map((items: HaystackModel) => {
-                    return <HayStackItem haystack={items}/>
+                {dataResponse.map((items: any) => {
+                    return <DocumentItem haystack={items}/>
                 })}
             </Col>
         </Row>

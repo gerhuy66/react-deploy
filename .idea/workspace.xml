@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="926c6bf1-432c-498b-b751-c3b534195841" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/custom/documents-item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/search/search-document.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/custom/hay-stack-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom/hay-stack-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/search-elastics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search-elastics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/search-haystack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search-haystack.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pvgas_hseq/frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -51,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\HuynhTrongDao\react-deploy\src\components\custom" />
       <recent name="C:\HuynhTrongDao\react-deploy\src\components\search" />
     </key>
   </component>
@@ -74,7 +82,8 @@
       <workItem from="1625105551355" duration="234000" />
       <workItem from="1625141340340" duration="7528000" />
       <workItem from="1625192853133" duration="513000" />
-      <workItem from="1625309144647" duration="3075000" />
+      <workItem from="1625309144647" duration="3683000" />
+      <workItem from="1625370504149" duration="5482000" />
     </task>
     <servers />
   </component>

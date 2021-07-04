@@ -31,15 +31,13 @@
 }
 
 .container-item {
-  display: flex;
-  justify-items: flex-start;
   background-image: linear-gradient(to bottom right, white, #ccffff);
-  width: 800px;
+  width: 100%;
   height: fit-content;
   box-shadow: 0px 0px 1px 1.5px #d9d9d9;
   border-radius: 10px;
   padding: 20px;
-
+  margin-top: 20px;
   .image-item {
     width: fit-content;
     height: fit-content;
@@ -65,34 +63,34 @@
       }
 
     }
+  }
 
-    .answer-item {
-      font-size: 20px;
-      color: #000099;
+  .answer-item {
+    font-size: 20px;
+    color: #000099;
+    font-weight: bold;
+    text-align: left;
+
+    .answer-sub-item {
       font-weight: bold;
-
-      .answer-sub-item {
-        font-weight: bold;
-        font-size: 20px;
-        color: black;
-      }
+      font-size: 20px;
+      color: black;
     }
+  }
 
-    .context-item {
+  .context-item {
+    text-align: left;
+    font-size: 20px;
+    color: #000099;
+    font-weight: bold;
+    .text-item {
+      font-weight: 600;
       font-size: 20px;
-      color: #000099;
-      font-weight: bold;
-      width: 550px;
+      color: black;
 
-      .text-item {
-        font-weight: 600;
-        font-size: 20px;
-        color: black;
-
-        .special-text {
-          font-size: 22px;
-          color: #000099;
-        }
+      .special-text {
+        font-size: 22px;
+        color: red;
       }
     }
   }
