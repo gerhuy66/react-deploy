@@ -5,6 +5,7 @@ import {Button, Col, Form, Input, InputNumber, Radio, Row, Select, Table} from "
 import {AgAbstractField} from "ag-grid-community";
 import {Option} from "antd/es/mentions";
 import ReactLoading from "react-loading";
+import {SnippetsTwoTone} from "@ant-design/icons";
 
 const columnDefs = [
     {
@@ -129,7 +130,7 @@ export const SearchElastics = (props: Props) => {
     return <>
         <Row>
             <Col span={12} offset={6} className="fieldset">
-                <h1>Elastic</h1>
+                <h1><SnippetsTwoTone/> Elastic Search</h1>
                 <Col span={18} offset={3}>
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>

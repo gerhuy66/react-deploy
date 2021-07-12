@@ -9,6 +9,7 @@ import {
 import {HaystackModel} from "./haystack.model";
 import {HayStackItem} from "../custom/hay-stack-item";
 import {DocumentItem} from "../custom/documents-item";
+import {SnippetsTwoTone} from "@ant-design/icons";
 
 type Props = {
     setActiveMenu: (key: string) => void;
@@ -31,7 +32,7 @@ export const SearchDocument = (props: Props) => {
     return <>
         <Row className="document-search">
             <Col span={12} offset={6} className="fieldset">
-                <h1>Document Search</h1>
+                <h1> <SnippetsTwoTone/>Document Search</h1>
                 <Col span={18} offset={3}>
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
