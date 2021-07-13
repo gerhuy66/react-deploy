@@ -24,8 +24,7 @@ export const HayStackItem = (props: Props) => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span={12} offset={6}>
-
+                    <Col span={12} offset={8}>
                         <Button type="primary">
                             <a href={`http://54.169.14.103:5000/download/${linkCv}`} className="link-cv">Download CV</a>
                         </Button>

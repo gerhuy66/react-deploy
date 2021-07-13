@@ -130,9 +130,9 @@ export const SearchElastics = (props: Props) => {
     }
     return <>
         <Row>
-            <Col span={12} offset={6} className="fieldset">
+            <Col span={16} offset={4} className="fieldset">
                 <h1><SnippetsTwoTone/> Elastic Search</h1>
-                <Col span={18} offset={3}>
+                <Col span={18} offset={3} className="fieldset-box">
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
                             <Col span={12}>

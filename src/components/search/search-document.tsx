@@ -33,7 +33,7 @@ export const SearchDocument = (props: Props) => {
         <Row className="document-search">
             <Col span={12} offset={6} className="fieldset">
                 <h1> <SnippetsTwoTone/>Document Search</h1>
-                <Col span={18} offset={3}>
+                <Col span={18} offset={3} className="fieldset-box">
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
                             <Col span={20} offset={2}>

@@ -13,12 +13,30 @@
   .fieldset {
     position: relative;
     border: 1px solid black;
-    padding: 20px 0 20px 0;
+    padding: 20px 20px 30px 20px;
     background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-recruitment-background-banner-image_159061.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 20%;
+    font-size: 16px;
+    color: white;
+    .fieldset-box {
+      color: white;
+      padding: 20px;
+      content: "";
+      font-size: 16px;
+      font-weight: bold;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background-color: rgba(255, 0, 0, 0.6);
+      border-radius: 20%;
+      label {
+        color: white;
+      }
+    }
   }
 
   .ant-table-cell {
