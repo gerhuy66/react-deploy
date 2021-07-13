@@ -11,9 +11,10 @@
   }
 
   .fieldset {
+    position: relative;
     border: 1px solid black;
     padding: 20px 0 20px 0;
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-technology-cool-particle-background-image_17636.jpg");
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-recruitment-background-banner-image_159061.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -85,7 +86,7 @@
       font-weight: 600;
       font-size: 20px;
       color: black;
-
+      white-space: pre-wrap;
       .special-text {
         font-size: 22px;
         color: red;

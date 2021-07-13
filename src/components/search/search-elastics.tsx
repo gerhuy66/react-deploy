@@ -112,6 +112,7 @@ export const SearchElastics = (props: Props) => {
             'address': values?.user.full_name,
             'old_position': values?.user.full_name,
             'target': values?.user.full_name,
+            'file_name': values?.user.file_name,
         }
 
         // setDataResponse(data)
@@ -178,6 +179,11 @@ export const SearchElastics = (props: Props) => {
                             </Col>
                             <Col span={12}>
                                 <Form.Item name={['user', 'old_position']} label="Vị trí cũ">
+                                    <Input/>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name={['user', 'file_name']} label="Tên file">
                                     <Input/>
                                 </Form.Item>
                             </Col>
