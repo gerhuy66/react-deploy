@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="926c6bf1-432c-498b-b751-c3b534195841" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="926c6bf1-432c-498b-b751-c3b534195841" name="Default Changelist" comment="" />
+>>>>>>> parent of 9c39ba2 (change icon)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,8 +79,11 @@
       <workItem from="1625192853133" duration="513000" />
       <workItem from="1625309144647" duration="3683000" />
       <workItem from="1625370504149" duration="13449000" />
+<<<<<<< HEAD
       <workItem from="1625394663708" duration="1261000" />
       <workItem from="1625448811131" duration="13000" />
+=======
+>>>>>>> parent of 9c39ba2 (change icon)
     </task>
     <servers />
   </component>
@@ -101,6 +108,7 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/search/search-elastics.tsx</url>
           <line>132</line>
+          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
