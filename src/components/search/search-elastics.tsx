@@ -27,8 +27,8 @@ const columnDefs = [
         width: 50,
         render: (value: string) =>{
             console.log(value)
-            const linkCv = value.replace("txt", "pdf").replace(" (1)", "")
-            const linkIm = value.replace("txt", "jpg").replace(" (1)", "")
+            const linkCv = value.replace("txt", "pdf").replace(" (1)", "").replace(" (2)", "").replace(" (3)", "").replace(" (4)", "").replace(" (5)", "")
+            const linkIm = value.replace("txt", "jpg").replace(" (1)", "").replace(" (2)", "").replace(" (3)", "").replace(" (4)", "").replace(" (5)", "")
 
             return <Row>
                 <Col span={24}>
@@ -72,6 +72,13 @@ const columnDefs = [
         maxHeight:100,
     },
     {
+        title: 'Major',
+        dataIndex: 'major',
+        key: 'major',
+        width: 50,
+        maxHeight:100,
+    },
+    {
         title: 'Target',
         dataIndex: 'target',
         key: 'target',
@@ -103,7 +110,7 @@ export const SearchElastics = (props: Props) => {
         const formValues = {
             'gender': values?.user.gender,
             'major': values?.user.major,
-            'languages': values?.user.languages,
+            'language': values?.user.language,
             'skills': values?.user.skills,
             'full_name': values?.user.full_name,
             'birth_date': values?.user.birth_date,
@@ -112,6 +119,7 @@ export const SearchElastics = (props: Props) => {
             'address': values?.user.full_name,
             'old_position': values?.user.full_name,
             'target': values?.user.full_name,
+            'file_name':values?.user.file_name
         }
 
         // setDataResponse(data)
@@ -153,6 +161,11 @@ export const SearchElastics = (props: Props) => {
                             </Col>
                             <Col span={12}>
                                 <Form.Item name={['user', 'full_name']} label="Tên">
+                                    <Input/>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item name={['user', 'file_name']} label="Tên File CV">
                                     <Input/>
                                 </Form.Item>
                             </Col>
