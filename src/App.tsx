@@ -28,19 +28,19 @@ function App() {
             <Menu selectedKeys={[stateMenu]} mode="horizontal" className="menu">
                 <Menu.Item key="elastic" icon={<SmileTwoTone/>}>
                     <Link to={'/elastic'}>
-                        Feature Search
+                        Tìm Kiếm Nâng Cao
                     </Link>
                 </Menu.Item>
 
                 <Menu.Item key="haystack" icon={<HeartTwoTone twoToneColor="#eb2f96"/>}>
                     <Link to={'/haystack'}>
-                        Q/A Search
+                        Tìm Kiếm Q/A
                     </Link>
                 </Menu.Item>
 
                 <Menu.Item key="document" icon={<FileTwoTone twoToneColor="#52c41a"/>}>
                     <Link to={'/document'}>
-                        Document Search
+                        Tìm Kiếm CV
                     </Link>
                 </Menu.Item>
             </Menu>

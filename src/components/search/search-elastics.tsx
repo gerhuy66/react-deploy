@@ -9,19 +9,19 @@ import {SnippetsTwoTone} from "@ant-design/icons";
 
 const columnDefs = [
     {
-        title: 'Full Name',
+        title: 'Họ Tên',
         dataIndex: 'full_name',
         key: 'full_name',
         width: 100
     },
     {
-        title: 'Birth date',
+        title: 'Ngày Sinh',
         dataIndex: 'birth_date',
         key: 'birth_date',
         width: 50,
     },
     {
-        title: 'File name',
+        title: 'Tên File',
         dataIndex: 'file_name',
         key: 'file_name',
         width: 50,
@@ -41,45 +41,45 @@ const columnDefs = [
         },
     },
     {
-        title: 'Gender',
+        title: 'Giới Tính',
         dataIndex: 'gender',
         key: 'gender',
         width: 50,
     },
     {
-        title: 'Phone',
+        title: 'Số Điện Thoại',
         dataIndex: 'phone',
         key: 'phone',
         width: 50,
     },
     {
-        title: 'Skills',
+        title: 'Kĩ Năng',
         dataIndex: 'skills',
         key: 'skills',
         width: 50,
     },
     {
-        title: 'Language',
+        title: 'Ngoại Ngữ',
         dataIndex: 'language',
         key: 'language',
         width: 50,
     },
     {
-        title: 'Old Position',
+        title: 'Vị Trí Cũ',
         dataIndex: 'old_position',
         key: 'old_position',
         width: 50,
         maxHeight:100,
     },
     {
-        title: 'Major',
+        title: 'Ngành',
         dataIndex: 'major',
         key: 'major',
         width: 50,
         maxHeight:100,
     },
     {
-        title: 'Target',
+        title: 'Mục Tiêu',
         dataIndex: 'target',
         key: 'target',
         width: 50,
@@ -138,7 +138,7 @@ export const SearchElastics = (props: Props) => {
     return <>
         <Row>
             <Col span={16} offset={4} className="fieldset">
-                <h1><SnippetsTwoTone/> Elastic Search</h1>
+                <h1><SnippetsTwoTone/> Tìm Kiếm Nâng Cao</h1>
                 <Col span={18} offset={3} className="fieldset-box">
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
@@ -196,9 +196,9 @@ export const SearchElastics = (props: Props) => {
                             </Col>
                         </Row>
                         <Form.Item>
-                            <Button type="primary" htmlType="submit">
+                            {/* <Button type="primary" htmlType="submit">
                                 Submit
-                            </Button>
+                            </Button> */}
                         </Form.Item>
                     </Form>
                 </Col>

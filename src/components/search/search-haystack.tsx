@@ -35,7 +35,7 @@ export const SearchHaystack = (props: Props) => {
     return <>
         <Row>
             <Col span={12} offset={6} className="fieldset">
-                <h1><SnippetsTwoTone />Q/A Search</h1>
+                <h1><SnippetsTwoTone />Tìm kiếm Q/A</h1>
                 <Col span={18} offset={3} className="fieldset-box">
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
@@ -46,9 +46,9 @@ export const SearchHaystack = (props: Props) => {
                             </Col>
                         </Row>
                         <Form.Item>
-                            <Button type="primary" htmlType="submit">
+                            {/* <Button type="primary" htmlType="submit">
                                 Submit
-                            </Button>
+                            </Button> */}
                         </Form.Item>
                     </Form>
                 </Col>

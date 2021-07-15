@@ -32,7 +32,7 @@ export const SearchDocument = (props: Props) => {
     return <>
         <Row className="document-search">
             <Col span={12} offset={6} className="fieldset">
-                <h1> <SnippetsTwoTone/>Document Search</h1>
+                <h1> <SnippetsTwoTone/>Tìm Kiếm CV</h1>
                 <Col span={18} offset={3} className="fieldset-box">
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
@@ -43,9 +43,9 @@ export const SearchDocument = (props: Props) => {
                             </Col>
                         </Row>
                         <Form.Item>
-                            <Button type="primary" htmlType="submit">
-                                Submit
-                            </Button>
+                            {/* <Button type="primary" htmlType="submit">
+                                tìm kiếm
+                            </Button> */}
                         </Form.Item>
                         <h4>Total: {totalCount} documents</h4>
 
