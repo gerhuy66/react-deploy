@@ -104,6 +104,9 @@ export const SearchElastics = (props: Props) => {
     props.setActiveMenu('elastic')
     const [dataResponse, setDataResponse] = useState<any[]>([])
     const [loading, setLoading] = useState<boolean>(false)
+    const [totalCount, setTotalCount] = useState<number>(0)
+    const [timeOut, setTimeOut] = useState<number>(0)
+
 
     const onFinish = async (values: any) => {
         console.log(values)
@@ -122,6 +125,7 @@ export const SearchElastics = (props: Props) => {
             'file_name':values?.user.file_name
         }
 
+        const sendDate = (new Date()).getTime();
         // setDataResponse(data)
         axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
             .then((res: any) => {
@@ -132,7 +136,11 @@ export const SearchElastics = (props: Props) => {
                     return subItem
                 })
                 console.log(finalResponse)
+                setTotalCount(finalResponse.length)
                 setDataResponse(finalResponse)
+                
+                const receiveDate = (new Date()).getTime();
+                setTimeOut(receiveDate - sendDate)
             })
     }
     return <>
@@ -196,10 +204,13 @@ export const SearchElastics = (props: Props) => {
                             </Col>
                         </Row>
                         <Form.Item>
-                            {/* <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit">
                                 Submit
-                            </Button> */}
+                            </Button>
                         </Form.Item>
+                        <h4>Total: {totalCount} documents</h4>
+                        <h4>Thời gian tìm kiếm: {timeOut} ms</h4>
+
                     </Form>
                 </Col>
             </Col>

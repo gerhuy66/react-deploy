@@ -15,7 +15,7 @@ export const DocumentItem = (props: Props) => {
         <Row className="container-item">
             <Col className="image-item" span={5}>
                 <Row>
-                    <Col span={16} offset={4}>x
+                    <Col span={16} offset={4}>
                         <img src={`http://54.169.14.103:5000/getImage/${linkIm}`}
                              className="image-cv" alt={"CV"}/>
                     </Col>

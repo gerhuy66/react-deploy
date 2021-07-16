@@ -20,15 +20,22 @@ export const SearchHaystack = (props: Props) => {
     props.setActiveMenu('haystack')
     const [dataResponse, setDataResponse] = useState<any[]>([])
     const [loading, setLoading] = useState<boolean>(false)
+    const [totalCount, setTotalCount] = useState<number>(0)
+    const [timeOut, setTimeOut] = useState<number>(0)
+
     const onFinish = async (values: any) => {
         setLoading(true)
-        console.log("Haystack")
+        const sendDate = (new Date()).getTime();
+
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
         await axios.post('http://54.169.14.103:5000/haystack', formValues)
             .then((res: any) => {
                 setDataResponse(res.data.result)
+                setTotalCount(res.data.result.length)
+                const receiveDate = (new Date()).getTime();
+                setTimeOut(receiveDate - sendDate)
             })
         setLoading(false)
     }
@@ -46,10 +53,13 @@ export const SearchHaystack = (props: Props) => {
                             </Col>
                         </Row>
                         <Form.Item>
-                            {/* <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit">
                                 Submit
-                            </Button> */}
+                            </Button>
                         </Form.Item>
+                        <h4>Total: {totalCount} documents</h4>
+                        <h4>Thời gian tìm kiếm: {timeOut} ms</h4>
+
                     </Form>
                 </Col>
             </Col>

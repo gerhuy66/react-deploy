@@ -18,7 +18,10 @@ export const SearchDocument = (props: Props) => {
     props.setActiveMenu('document')
     const [dataResponse, setDataResponse] = useState<any[]>([])
     const [totalCount, setTotalCount] = useState<number>(0)
+    const [timeOut, setTimeOut] = useState<number>(0)
+
     const onFinish = async (values: any) => {
+        const sendDate = (new Date()).getTime();
 
         const formValues = {
             'haystackData': values?.user.haystackData,
@@ -27,6 +30,8 @@ export const SearchDocument = (props: Props) => {
             .then((res: any) => {
                 setTotalCount(res.data.result.length)
                 setDataResponse(res.data.result)
+                const receiveDate = (new Date()).getTime();
+                setTimeOut(receiveDate - sendDate)
             })
     }
     return <>
@@ -38,16 +43,17 @@ export const SearchDocument = (props: Props) => {
                         <Row>
                             <Col span={20} offset={2}>
                                 <Form.Item name={['user', 'haystackData']} label="Tìm kiếm">
-                                    <Input/>
+                                    <Input />
                                 </Form.Item>
                             </Col>
                         </Row>
                         <Form.Item>
-                            {/* <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit">
                                 tìm kiếm
-                            </Button> */}
+                            </Button>
                         </Form.Item>
                         <h4>Total: {totalCount} documents</h4>
+                        <h4>Thời gian tìm kiếm: {timeOut} ms</h4>
 
                     </Form>
                 </Col>
