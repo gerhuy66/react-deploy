@@ -110,7 +110,7 @@ export const SearchElastics = (props: Props) => {
 
     const onFinish = async (values: any) => {
         
-        const formValues = {
+        const formValues: any = {
             'gender': values?.user.gender,
             'major': values?.user.major,
             'language': values?.user.language,
@@ -124,10 +124,14 @@ export const SearchElastics = (props: Props) => {
             'target': values?.user.target,
             'file_name':values?.user.file_name
         }
-        const final = Object.entries(formValues).filter(([key, value]) => value !== undefined && value !=="")
-        const sendDate = (new Date()).getTime();
+        for(const i in formValues){
+            if(formValues[i] === undefined || formValues[i] === "") delete formValues[i];
+        }
+
+        console.log(formValues)
+          const sendDate = (new Date()).getTime();
         // setDataResponse(data)
-        axios.post('http://54.169.14.103:5000/searchCvAdvance', final)
+        axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
             .then((res: any) => {
                 const data = res.data.res
                 const finalResponse = data.map((item: any, index: number) => {
