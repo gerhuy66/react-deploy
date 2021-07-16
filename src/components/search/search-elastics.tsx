@@ -109,7 +109,7 @@ export const SearchElastics = (props: Props) => {
 
 
     const onFinish = async (values: any) => {
-        console.log(values)
+        
         const formValues = {
             'gender': values?.user.gender,
             'major': values?.user.major,
@@ -118,16 +118,16 @@ export const SearchElastics = (props: Props) => {
             'full_name': values?.user.full_name,
             'birth_date': values?.user.birth_date,
             'email': values?.user.email,
-            'phone': values?.user.full_name,
-            'address': values?.user.full_name,
-            'old_position': values?.user.full_name,
-            'target': values?.user.full_name,
+            'phone': values?.user.phone,
+            'address': values?.user.address,
+            'old_position': values?.user.old_position,
+            'target': values?.user.target,
             'file_name':values?.user.file_name
         }
-
+        const final = Object.entries(formValues).filter(([key, value]) => value !== undefined && value !=="")
         const sendDate = (new Date()).getTime();
         // setDataResponse(data)
-        axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
+        axios.post('http://54.169.14.103:5000/searchCvAdvance', final)
             .then((res: any) => {
                 const data = res.data.res
                 const finalResponse = data.map((item: any, index: number) => {
@@ -160,8 +160,8 @@ export const SearchElastics = (props: Props) => {
                             </Col>
                             <Col span={12}>
                                 <Form.Item name={['user', 'language']} label="Ngoại ngữ">
-                                    <Select defaultValue="Tiếng Anh" style={{width: 120}} allowClear>
-                                        <Option value="Tiếng Anh">Tiếng Anh</Option>
+                                    <Select style={{width: 120}} allowClear>
+                                        <Option value="Tiếng Anh" >Tiếng Anh</Option>
                                         <Option value="Tiếng Trung">Tiếng Trung</Option>
                                         <Option value="Tiếng Nhật">Tiếng Nhật</Option>
                                     </Select>
