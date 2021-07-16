@@ -40,7 +40,7 @@ export const SearchHaystack = (props: Props) => {
                     <Form name="nest-messages" onFinish={onFinish}>
                         <Row>
                             <Col span={20} offset={2}>
-                                <Form.Item name={['user', 'haystackData']} label="Search">
+                                <Form.Item name={['user', 'haystackData']} label="Tìm kiếm">
                                     <Input/>
                                 </Form.Item>
                             </Col>
