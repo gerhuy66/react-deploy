@@ -9,8 +9,8 @@ type Props = {
 };
 export const HayStackItem = (props: Props) => {
     const haystack = props.haystack
-    const linkIm = haystack.file_url.replace("txt", "jpg").replace(" (1)", "")
-    const linkCv = haystack.file_url.replace("txt", "pdf").replace(" (1)", "")
+    const linkIm = haystack.file_url.replace("txt", "jpg").replace(" (1)", "").replace(" (2)", "").replace(" (3)", "").replace(" (4)", "").replace(" (5)", "")
+    const linkCv = haystack.file_url.replace("txt", "pdf").replace(" (1)", "").replace(" (2)", "").replace(" (3)", "").replace(" (4)", "").replace(" (5)", "")
     const context = haystack.context.replace(haystack.answer, `<span class="special-text">${haystack.answer}</span>`)
     return (
     <>
@@ -33,10 +33,10 @@ export const HayStackItem = (props: Props) => {
             </Col>
             <Col className="text-item" span={18} offset={1}>
                 <div className="answer-item">
-                    Answer: <span className="answer-sub-item">{haystack.answer}</span>
-                </div>
+                    <span className="answer-sub-item">{linkCv}</span>
+                </div><br></br>
                 <div className="context-item">
-                    Context: <span className="text-item" dangerouslySetInnerHTML={{__html: context}}/>
+                    ...<span className="text-item" dangerouslySetInnerHTML={{__html: context}}/>...
                 </div>
             </Col>
         </Row>

@@ -212,8 +212,8 @@ export const SearchElastics = (props: Props) => {
                                 Submit
                             </Button>
                         </Form.Item>
-                        <h4>Total: {totalCount} documents</h4>
-                        <h4>Thời gian tìm kiếm: {timeOut} ms</h4>
+                        <h4>Total: {totalCount} tài liệu</h4>
+                        <h4>Thời gian tìm kiếm: {timeOut/1000} giây</h4>
 
                     </Form>
                 </Col>
