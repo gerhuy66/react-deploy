@@ -9,6 +9,7 @@ type Props = {
 };
 export const HayStackItem = (props: Props) => {
     const haystack = props.haystack
+    const relevance = Math.round(haystack.prob*100*100)/100
     const linkIm = haystack.file_url.replace("txt", "jpg").replace(" (1)", "").replace(" (2)", "").replace(" (3)", "").replace(" (4)", "").replace(" (5)", "")
     const linkCv = haystack.file_url.replace("txt", "pdf").replace(" (1)", "").replace(" (2)", "").replace(" (3)", "").replace(" (4)", "").replace(" (5)", "")
     const context = haystack.context.replace(haystack.answer, `<span class="special-text">${haystack.answer}</span>`)
@@ -34,6 +35,7 @@ export const HayStackItem = (props: Props) => {
             <Col className="text-item" span={18} offset={1}>
                 <div className="answer-item">
                     <span className="answer-sub-item">{linkCv}</span>
+                    <div className = "relevanceText">Relevance: {relevance}%</div>
                 </div><br></br>
                 <div className="context-item">
                     ...<span className="text-item" dangerouslySetInnerHTML={{__html: context}}/>...
