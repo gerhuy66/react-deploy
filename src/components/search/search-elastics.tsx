@@ -6,6 +6,7 @@ import {AgAbstractField} from "ag-grid-community";
 import {Option} from "antd/es/mentions";
 import ReactLoading from "react-loading";
 import {SnippetsTwoTone} from "@ant-design/icons";
+import {BeatLoader} from 'react-spinners';
 
 const columnDefs = [
     {
@@ -109,7 +110,7 @@ export const SearchElastics = (props: Props) => {
 
 
     const onFinish = async (values: any) => {
-        
+        setLoading(true)
         const formValues: any = {
             'gender': values?.user.gender,
             'major': values?.user.major,
@@ -131,7 +132,7 @@ export const SearchElastics = (props: Props) => {
         console.log(formValues)
           const sendDate = (new Date()).getTime();
         // setDataResponse(data)
-        axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
+        await axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
             .then((res: any) => {
                 const data = res.data.res
                 const finalResponse = data.map((item: any, index: number) => {
@@ -146,6 +147,8 @@ export const SearchElastics = (props: Props) => {
                 const receiveDate = (new Date()).getTime();
                 setTimeOut(receiveDate - sendDate)
             })
+            setLoading(false)
+
     }
     return <>
         <Row>
@@ -220,6 +223,10 @@ export const SearchElastics = (props: Props) => {
             </Col>
         </Row>
         <Row className={"row-table"}>
+            <Col span={6} offset={9}>
+                {/* {loading && <ReactLoading type={'balls'} className="loading" width={'100%'} height={10}/>} */}
+                <BeatLoader size={24} loading={loading}/>           
+            </Col>
             <Col span={24}>
                 <Table
                     columns={columnDefs}

@@ -10,7 +10,7 @@ import {HaystackModel} from "./haystack.model";
 import {HayStackItem} from "../custom/hay-stack-item";
 import ReactLoading from "react-loading";
 import {SnippetsTwoTone} from "@ant-design/icons";
-
+import {BeatLoader} from 'react-spinners';
 
 type Props = {
     setActiveMenu: (key: string) => void;
@@ -65,8 +65,9 @@ export const SearchHaystack = (props: Props) => {
             </Col>
         </Row>
         <Row>
-            <Col span={2} offset={11}>
-                {loading && <ReactLoading type={'balls'} className="loading" width={'100%'} height={10}/>}
+        <Col span={6} offset={9}>
+                {/* {loading && <ReactLoading type={'balls'} className="loading" width={'100%'} height={10}/>} */}
+                <BeatLoader size={24} loading={loading}/>           
             </Col>
             <Col span={18} offset={3}>
                 {!loading && dataResponse.map((items: HaystackModel) => {
