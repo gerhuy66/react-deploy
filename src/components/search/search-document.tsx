@@ -26,7 +26,7 @@ export const SearchDocument = (props: Props) => {
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
-        axios.post('http://54.169.14.103:5000/searchText', formValues)
+        axios.post('http://54.169.197.130:5000/searchText', formValues)
             .then((res: any) => {
                 setTotalCount(res.data.result.length)
                 setDataResponse(res.data.result)

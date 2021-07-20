@@ -33,10 +33,10 @@ const columnDefs = [
 
             return <Row>
                 <Col span={24}>
-                    <img src={`http://54.169.14.103:5000/getImage/${linkIm}`} width={150} height={200} alt={"CV"}/>
+                    <img src={`http://54.169.197.130:5000/getImage/${linkIm}`} width={150} height={200} alt={"CV"}/>
                 </Col>
                 <Col span={24}>
-                    <a href={`http://54.169.14.103:5000/download/${linkCv}`} target="_blank">{linkCv} </a>
+                    <a href={`http://54.169.197.130:5000/download/${linkCv}`} target="_blank">{linkCv} </a>
                 </Col>
             </Row>
         },
@@ -132,7 +132,7 @@ export const SearchElastics = (props: Props) => {
         console.log(formValues)
           const sendDate = (new Date()).getTime();
         // setDataResponse(data)
-        await axios.post('http://54.169.14.103:5000/searchCvAdvance', formValues)
+        await axios.post('http://54.169.197.130:5000/searchCvAdvance', formValues)
             .then((res: any) => {
                 const data = res.data.res
                 const finalResponse = data.map((item: any, index: number) => {

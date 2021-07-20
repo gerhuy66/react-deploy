@@ -20,14 +20,14 @@ export const HayStackItem = (props: Props) => {
                 <Row>
                     <Col span={16} offset={4}>
 
-                        <img src={`http://54.169.14.103:5000/getImage/${linkIm}`}
+                        <img src={`http://54.169.197.130:5000/getImage/${linkIm}`}
                              className="image-cv" alt={"CV"}/>
                     </Col>
                 </Row>
                 <Row>
                     <Col span={12} offset={8}>
                         <Button type="primary">
-                            <a href={`http://54.169.14.103:5000/download/${linkCv}`} className="link-cv">Download CV</a>
+                            <a href={`http://54.169.197.130:5000/download/${linkCv}`} className="link-cv">Download CV</a>
                         </Button>
                     </Col>
                 </Row>

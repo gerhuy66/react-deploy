@@ -30,7 +30,7 @@ export const SearchHaystack = (props: Props) => {
         const formValues = {
             'haystackData': values?.user.haystackData,
         }
-        await axios.post('http://54.169.14.103:5000/haystack', formValues)
+        await axios.post('http://54.169.197.130:5000/haystack', formValues)
             .then((res: any) => {
                 setDataResponse(res.data.result)
                 setTotalCount(res.data.result.length)
