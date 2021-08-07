@@ -168,9 +168,9 @@ export const SearchElastics = (props: Props) => {
                             <Col span={12}>
                                 <Form.Item name={['user', 'language']} label="Ngoại ngữ">
                                     <Select style={{width: 120}} allowClear>
-                                        <Option value="Tiếng Anh" >Tiếng Anh</Option>
-                                        <Option value="Tiếng Trung">Tiếng Trung</Option>
-                                        <Option value="Tiếng Nhật">Tiếng Nhật</Option>
+                                        <Option value="Anh" >Tiếng Anh</Option>
+                                        <Option value="Trung">Tiếng Trung</Option>
+                                        <Option value="Nhật">Tiếng Nhật</Option>
                                     </Select>
                                 </Form.Item>
                             </Col>
